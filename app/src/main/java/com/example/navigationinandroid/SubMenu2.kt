@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.navigationinandroid.databinding.FragmentSubMenu2Binding
 
 class SubMenu2 : Fragment() {
-    var _binding:FragmentSubMenu2Binding? = null
-    val binding get() = _binding!!
+    private lateinit var binding:FragmentSubMenu2Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,12 +18,15 @@ class SubMenu2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSubMenu2Binding.inflate(layoutInflater)
+        binding = FragmentSubMenu2Binding.inflate(layoutInflater)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        findNavController().navigate(R.id.action_subMenu2_to_mainMenu)
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
     }
 }

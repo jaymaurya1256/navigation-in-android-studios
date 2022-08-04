@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import com.example.navigationinandroid.databinding.FragmentSubMenu3Binding
 
 class SubMenu3 : Fragment() {
-    var _binding:FragmentSubMenu3Binding? = null
-    val binding get() = _binding!!
+    private lateinit var binding:FragmentSubMenu3Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -18,12 +17,11 @@ class SubMenu3 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSubMenu3Binding.inflate(layoutInflater)
+        binding = FragmentSubMenu3Binding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
     }
 }
