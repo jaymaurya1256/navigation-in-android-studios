@@ -23,7 +23,9 @@ class SubMenu2 : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        findNavController().navigate(R.id.action_subMenu2_to_mainMenu)
+        binding.button5.setOnClickListener{
+            findNavController().navigate(R.id.action_subMenu2_to_mainMenu)
+        }
     }
 
     override fun onDestroyView() {
